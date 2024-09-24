@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
+    <header class="sticky">
           <div class="navbar bg-[#F9F7F3] px-5 py-8">
             <div class="navbar-start">
                 <button id="btn-blog" class="btn btn-success bg-[#B4F461]">Blog</button>
@@ -26,11 +26,27 @@
             </div>
           </div>
           <div class="text-center py-6">
-            <button id="btn-donate" class="btn btn-success bg-[#B4F461]">Donate</button>
-            <button id="btn-history" class="btn btn-success bg-[#B4F461]">History</button>
+            <button id="btn-donate" class="btn bg-green-500 w-2/6">Donate</button>
+            <button id="btn-history" class="btn w-2/6">History</button>
           </div>
     </header>
-    <main>
+    <main id="donate_section">
+
+
+      <dialog id="my_modal_1" class="modal"></dialog>
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">Congrates!</h3>
+          <p class="py-4"><img src="./assets/coin.png" alt=""></p>
+          <h3 class="text-lg ">You have donated for HumanKind</h3>
+          <h3 class="text-lg font-bold">Successfully!</h3>
+          <div class="modal-action">
+            <form method="dialog" class=" flex justify-center">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close confirmation</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
         <!-- Nowakhali section -->
         <section class="card card-side flex flex-col lg:flex-row bg-base-100 shadow-xl py-10  w-full">
             <div class="w-full px-4">
@@ -45,7 +61,7 @@
                      <img src="./assets/coin.png" alt=""> 
                    <button id="nowkhali_account" class="px-3">3000 BDT</button>
                 </div>
-              <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+              <h2 id="nowakhali_title" class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
               <p class="text-justify"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
               <div class="card-actions w-full">
                 <!-- <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" /> -->
@@ -73,7 +89,7 @@
                      <img src="./assets/coin.png" alt=""> 
                    <button id="feni_account" class="px-3">2000 BDT</button>
                 </div>
-              <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
+              <h2 id="feni_title" class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
               <p class="text-justify">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
               <div class="card-actions w-full">
                 <!-- <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" /> -->
@@ -102,7 +118,7 @@
                      <img src="./assets/coin.png" alt=""> 
                    <button id="student_protest_account" class="px-3">4000 BDT</button>
                 </div>
-              <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
+              <h2 id="protest_title" class="card-title">Aid for Injured in the Quota Movement</h2>
               <p class="text-justify">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need..</p>
               <div class="card-actions w-full">
                 <!-- <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" /> -->
@@ -117,8 +133,54 @@
         </section>
        
     </main>
-    <footer></footer>
+    <footer>
+      <section id="history_container" class="bg-purple-300 px-8">
+        <h2 class="text-center text-2xl text-yellow-200">Donation History</h2>
+      </section>
+      <!-- blog section -->
+      <section id="blog_section" class="w-full">
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">What is the DOM in JavaScript, and how does it work?</div>
+          <div class="collapse-content">
+            <p>The Document Object Model (DOM) is a programming interface for web documents. It represents a webpage's structure as a tree of objects, where each node corresponds to a part of the document (like elements, attributes, or text). JavaScript can interact with the DOM to dynamically update content and styles.</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">How can you select an element in the DOM using JavaScript?</div>
+          <div class="collapse-content">
+            <p>To select an element in the DOM, you can use methods like `document.getElementById()` for an ID, `document.getElementsByClassName()` for a class, `document.getElementsByTagName()` for a tag, or `document.querySelector()` and `document.querySelectorAll()` for more complex CSS-style selectors. These return elements for further manipulation. </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">How do you add or remove elements in the DOM dynamically?</div>
+          <div class="collapse-content">
+            <p>To add elements in the DOM dynamically, use methods like `document.createElement()` to create the element and `parent.appendChild()` or `parent.insertBefore()` to insert it. To remove elements, use `element.remove()` or `parent.removeChild(element)`. These methods allow dynamic manipulation of the DOM structure.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">What are event listeners, and how do they interact with the DOM?</div>
+          <div class="collapse-content">
+            <p>Event listeners are functions that wait for specific events (e.g., clicks, keypresses) on DOM elements. Using `element.addEventListener()`, you can attach an event listener to an element, specifying the event type (e.g., "click") and a callback function. When the event occurs, the callback is executed, enabling dynamic interaction with the DOM</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">How can you modify an element's attributes or styles in the DOM?</div>
+          <div class="collapse-content">
+            <p>To modify an element's attributes in the DOM, use methods like `element.setAttribute()` to set attributes or `element.removeAttribute()` to remove them. For modifying styles, use the `element.style` property to directly set CSS properties (e.g., `element.style.color = "blue"`). You can also add or remove CSS classes using `element.classList.add()` and `element.classList.remove()`.
+            </p>
+          </div>
+        </div>
+      </section>
+    </footer>
     <script src="./js/home.js"></script>
     <script src="./js/function.js"></script>
+    <script src="./js/feature.js"></script>
+    <script src="./js/historey.js"></script>
 </body>
 </html>
