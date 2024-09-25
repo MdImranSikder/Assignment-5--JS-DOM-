@@ -16,7 +16,10 @@ document.getElementById('nowakhali_donate_btn').addEventListener('click',functio
     document.getElementById('nowkhali_account').innerText=new_blance_nowakhali;
 
     const nowakhali_title=document.getElementById('nowakhali_title').innerText;
-    transection_system(nowalhali_input,nowakhali_title)
+    transection_system(nowalhali_input,nowakhali_title);
+
+    //modal
+    my_modal_1.showModal();
   }
 
   else{
@@ -43,6 +46,9 @@ document.getElementById('feni_donate_btn').addEventListener('click', function(e)
     const feni_title=document.getElementById('feni_title').innerText;
 
     transection_system(feni_input_account,feni_title);
+
+    //modal
+    my_modal_1.showModal();
   }
 
   else 
@@ -71,7 +77,9 @@ document.getElementById('student_Protest_Donate').addEventListener('click', func
    const protest_title= document.getElementById('protest_title').innerText;
 
 
-    transection_system(student_protest_input,protest_title)
+    transection_system(student_protest_input,protest_title);
+    //modal
+    my_modal_1.showModal();
   }
 
   else 

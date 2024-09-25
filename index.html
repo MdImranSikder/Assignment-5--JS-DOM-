@@ -9,10 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="sticky">
-          <div class="navbar bg-[#F9F7F3] px-5 py-8">
+    <header class="sticky top-0 z-10 bg-gradient-to-b from-purple-400 to-purple-50">
+          <div class="navbar bg-[#F9F7F3] px-5 py-4">
             <div class="navbar-start">
-                <button id="btn-blog" class="btn btn-success bg-[#B4F461]">Blog</button>
+                <button id="btn-blog" class="btn bg-[#B4F461] w-1/4">Blog</button>
  
             </div>
             <div class="navbar-center">
@@ -21,33 +21,17 @@
             </div>
             <div class="navbar-end">
                 <img src="./assets/coin.png" alt=""> 
-              <H3 id="available_account" class="px-4">5500 BDT</H3>
+              <H3 id="available_account" class="px-4">50000 BDT</H3>
               
             </div>
           </div>
-          <div class="text-center py-6">
+          <div class="text-center py-3">
             <button id="btn-donate" class="btn bg-green-500 w-2/6">Donate</button>
             <button id="btn-history" class="btn w-2/6">History</button>
           </div>
     </header>
     <main id="donate_section">
-
-
-      <dialog id="my_modal_1" class="modal"></dialog>
-        <div class="modal-box">
-          <h3 class="text-lg font-bold">Congrates!</h3>
-          <p class="py-4"><img src="./assets/coin.png" alt=""></p>
-          <h3 class="text-lg ">You have donated for HumanKind</h3>
-          <h3 class="text-lg font-bold">Successfully!</h3>
-          <div class="modal-action">
-            <form method="dialog" class=" flex justify-center">
-              <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Close confirmation</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-        <!-- Nowakhali section -->
+      <!-- Nowakhali section -->
         <section class="card card-side flex flex-col lg:flex-row bg-base-100 shadow-xl py-10  w-full">
             <div class="w-full px-4">
                 <figure class="w-full">
@@ -134,11 +118,12 @@
        
     </main>
     <footer>
-      <section id="history_container" class="bg-purple-300 px-8">
+      <!-- transection system -->
+      <section id="history_container" class=" hidden bg-purple-300 px-8 py-4">
         <h2 class="text-center text-2xl text-yellow-200">Donation History</h2>
       </section>
       <!-- blog section -->
-      <section id="blog_section" class="w-full">
+      <section id="blog_section" class="hidden w-full">
         <div class="collapse collapse-arrow bg-base-200">
           <input type="radio" name="my-accordion-2" checked="checked" />
           <div class="collapse-title text-xl font-medium">What is the DOM in JavaScript, and how does it work?</div>
@@ -177,10 +162,28 @@
           </div>
         </div>
       </section>
-    </footer>
+      
+        <!-- Open the modal using ID.showModal() method -->
+       <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold text-center tex-2xl">Congratulation !</h3>
+        <p ><img src="./assets/coin.png" alt=""></p>
+        <p class="py-4">You have donated for HumanKind.</p>
+        <div class="modal-action">
+          <form method="dialog" class="flex justify-center">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close Confirmation</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+</footer>
+
     <script src="./js/home.js"></script>
     <script src="./js/function.js"></script>
     <script src="./js/feature.js"></script>
     <script src="./js/historey.js"></script>
+
 </body>
 </html>
